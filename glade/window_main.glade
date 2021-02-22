@@ -12,6 +12,11 @@
     <property name="can-focus">False</property>
     <property name="icon-name">go-home</property>
   </object>
+  <object class="GtkImage" id="btn_home2">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">go-home</property>
+  </object>
   <object class="GtkImage" id="imb_btn_up">
     <property name="visible">True</property>
     <property name="can-focus">False</property>
@@ -36,6 +41,11 @@
     <property name="visible">True</property>
     <property name="can-focus">False</property>
     <property name="icon-name">applications-science</property>
+  </object>
+  <object class="GtkImage" id="img_btn_sub_add">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">mail-send</property>
   </object>
   <object class="GtkWindow" id="window_main">
     <property name="width-request">400</property>
@@ -104,6 +114,7 @@ Le client est roi</property>
                     <property name="image">img_btn_commande</property>
                     <property name="always-show-image">True</property>
                     <signal name="clicked" handler="commande" object="stack" swapped="no"/>
+                    <signal name="clicked" handler="view" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">19</property>
@@ -311,6 +322,108 @@ Produit</property>
             <property name="title" translatable="yes">produit</property>
             <property name="position">2</property>
           </packing>
+        </child>
+        <child>
+          <object class="GtkFrame" id="prod_add">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label-xalign">0</property>
+            <property name="shadow-type">none</property>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image">btn_home2</property>
+                    <signal name="clicked" handler="home" object="stack" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">10</property>
+                    <property name="y">10</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">fast &amp; eat
+
+ajouter un produit</property>
+                  </object>
+                  <packing>
+                    <property name="x">163</property>
+                    <property name="y">16</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_nom">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="text" translatable="yes">Nom</property>
+                  </object>
+                  <packing>
+                    <property name="x">143</property>
+                    <property name="y">106</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_prix">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="text" translatable="yes">Prix</property>
+                  </object>
+                  <packing>
+                    <property name="x">144</property>
+                    <property name="y">154</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_description">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="text" translatable="yes">Description</property>
+                  </object>
+                  <packing>
+                    <property name="x">145</property>
+                    <property name="y">201</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_sub_add">
+                    <property name="label" translatable="yes">ajoutez!</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image">img_btn_sub_add</property>
+                    <property name="always-show-image">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">171</property>
+                    <property name="y">252</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="label_item">
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="name">page4</property>
+            <property name="title" translatable="yes">pro_add</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
         </child>
       </object>
     </child>
