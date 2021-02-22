@@ -57,6 +57,21 @@
     <property name="can-focus">False</property>
     <property name="icon-name">mail-send</property>
   </object>
+  <object class="GtkImage" id="img_btn_sub_add1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">mail-send</property>
+  </object>
+  <object class="GtkImage" id="img_btn_sub_add2">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">mail-send</property>
+  </object>
+  <object class="GtkImage" id="img_rafraichir">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">mail-send-receive</property>
+  </object>
   <object class="GtkWindow" id="window_main">
     <property name="width-request">400</property>
     <property name="height-request">400</property>
@@ -283,6 +298,7 @@ Produit</property>
                     <property name="receives-default">True</property>
                     <property name="image">img_btn_add</property>
                     <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="prod_add" object="stack" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">62</property>
@@ -358,7 +374,7 @@ Produit</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel">
+                  <object class="GtkLabel" id="produit_add_label">
                     <property name="width-request">100</property>
                     <property name="height-request">80</property>
                     <property name="visible">True</property>
@@ -374,6 +390,7 @@ ajouter un produit</property>
                 </child>
                 <child>
                   <object class="GtkEntry" id="entry_nom">
+                    <property name="name">entry_nom</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="text" translatable="yes">Nom</property>
@@ -415,6 +432,7 @@ ajouter un produit</property>
                     <property name="receives-default">True</property>
                     <property name="image">img_btn_sub_add</property>
                     <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="submit_produit_add" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">171</property>
@@ -435,7 +453,6 @@ ajouter un produit</property>
         </child>
         <child>
           <object class="GtkFrame" id="prod_up">
-            <property name="name">prod_up</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="label-xalign">0</property>
@@ -493,10 +510,27 @@ ajouter un produit</property>
                     <property name="receives-default">True</property>
                     <property name="image">img_btn_sub_add1</property>
                     <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="prod_up2" object="stack" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">328</property>
                     <property name="y">325</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="width-request">36</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image">img_rafraichir</property>
+                    <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="rafraichir" object="ll_all_product" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">384</property>
+                    <property name="y">11</property>
                   </packing>
                 </child>
               </object>
@@ -506,13 +540,13 @@ ajouter un produit</property>
             </child>
           </object>
           <packing>
-            <property name="name">page4</property>
-            <property name="title" translatable="yes">page4</property>
+            <property name="name">page5</property>
+            <property name="title" translatable="yes">prod_up</property>
             <property name="position">4</property>
           </packing>
         </child>
         <child>
-          <object class="GtkFrame">
+          <object class="GtkFrame" id="prod_up2">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="label-xalign">0</property>
@@ -527,6 +561,7 @@ ajouter un produit</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="image">btn_home4</property>
+                    <signal name="clicked" handler="prod_up" object="stack" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">10</property>
@@ -604,25 +639,12 @@ modification produit</property>
             </child>
           </object>
           <packing>
-            <property name="name">page0</property>
-            <property name="title" translatable="yes">page0</property>
+            <property name="name">page6</property>
+            <property name="title" translatable="yes">prod_up2</property>
             <property name="position">5</property>
           </packing>
         </child>
-        <child>
-          <placeholder/>
-        </child>
       </object>
     </child>
-  </object>
-  <object class="GtkImage" id="img_btn_sub_add1">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
-    <property name="icon-name">mail-send</property>
-  </object>
-  <object class="GtkImage" id="img_btn_sub_add2">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
-    <property name="icon-name">mail-send</property>
   </object>
 </interface>
