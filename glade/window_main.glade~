@@ -27,6 +27,11 @@
     <property name="can-focus">False</property>
     <property name="icon-name">go-home</property>
   </object>
+  <object class="GtkImage" id="btn_home5">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">go-home</property>
+  </object>
   <object class="GtkImage" id="imb_btn_up">
     <property name="visible">True</property>
     <property name="can-focus">False</property>
@@ -67,7 +72,22 @@
     <property name="can-focus">False</property>
     <property name="icon-name">mail-send</property>
   </object>
+  <object class="GtkImage" id="img_btn_sub_add3">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">mail-send</property>
+  </object>
   <object class="GtkImage" id="img_rafraichir">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">mail-send-receive</property>
+  </object>
+  <object class="GtkImage" id="img_rafraichir1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">mail-send-receive</property>
+  </object>
+  <object class="GtkImage" id="img_rafraichir2">
     <property name="visible">True</property>
     <property name="can-focus">False</property>
     <property name="icon-name">mail-send-receive</property>
@@ -332,6 +352,7 @@ Produit</property>
                     <property name="receives-default">True</property>
                     <property name="image">img_btn_del</property>
                     <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="prod_del" object="stack" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">275</property>
@@ -526,7 +547,7 @@ ajouter un produit</property>
                     <property name="receives-default">True</property>
                     <property name="image">img_rafraichir</property>
                     <property name="always-show-image">True</property>
-                    <signal name="clicked" handler="rafraichir" swapped="no"/>
+                    <signal name="clicked" handler="rafraichir" object="ll_all_product" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">384</property>
@@ -584,7 +605,7 @@ modification produit</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry" id="entry_nom1">
+                  <object class="GtkEntry" id="entry_nom_up">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="text" translatable="yes">Nom</property>
@@ -595,7 +616,7 @@ modification produit</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry" id="entry_prix1">
+                  <object class="GtkEntry" id="entry_prix_up">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="text" translatable="yes">Prix</property>
@@ -606,7 +627,7 @@ modification produit</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry" id="entry_description1">
+                  <object class="GtkEntry" id="entry_description_up">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="text" translatable="yes">Description</property>
@@ -626,10 +647,25 @@ modification produit</property>
                     <property name="receives-default">True</property>
                     <property name="image">img_btn_sub_add2</property>
                     <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="update_produit" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">171</property>
                     <property name="y">252</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image">img_rafraichir1</property>
+                    <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="rafraichir_up2" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">400</property>
+                    <property name="y">10</property>
                   </packing>
                 </child>
               </object>
@@ -642,6 +678,99 @@ modification produit</property>
             <property name="name">page6</property>
             <property name="title" translatable="yes">prod_up2</property>
             <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFrame" id="pro_del">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label-xalign">0</property>
+            <property name="shadow-type">none</property>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image">btn_home5</property>
+                    <signal name="clicked" handler="produit" object="stack" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">10</property>
+                    <property name="y">10</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="ll_all_product1">
+                    <property name="width-request">100</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">produit</property>
+                  </object>
+                  <packing>
+                    <property name="x">54</property>
+                    <property name="y">60</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_id_del">
+                    <property name="width-request">168</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="text" translatable="yes">id (1,2,3,...)</property>
+                  </object>
+                  <packing>
+                    <property name="x">143</property>
+                    <property name="y">323</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_sub_up1">
+                    <property name="label" translatable="yes">validez</property>
+                    <property name="width-request">85</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image">img_btn_sub_add3</property>
+                    <property name="always-show-image">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">328</property>
+                    <property name="y">325</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="width-request">36</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="image">img_rafraichir2</property>
+                    <property name="always-show-image">True</property>
+                    <signal name="clicked" handler="rafraichir_del" object="ll_all_product1" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">384</property>
+                    <property name="y">11</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="label_item">
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="name">page7</property>
+            <property name="title" translatable="yes">prod_del</property>
+            <property name="position">6</property>
           </packing>
         </child>
       </object>
