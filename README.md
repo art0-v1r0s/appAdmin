@@ -33,8 +33,23 @@ PHPMYADMIN (simple d'utilisation) :
 sudo apt install phpmyadmin
 ```
 Crée utilisateur
+```
+CREATE USER 'nom_utilisateur_choisi'@'localhost' IDENTIFIED BY 'mot_de_passe_solide';
+```
+```
+GRANT ALL ON *.* TO 'nom_utilisateur_choisi'@'localhost' WITH GRANT OPTION;
+```
+```
+FLUSH PRIVILEGES;
+```
+```
+QUIT;
+```
 Connecter vous
+
 Ajouter (Inserer) a votre BDD le fichier "Fast-Food.SQL"
+
+
 
 
 ## Running the project
