@@ -26,7 +26,7 @@ snap install glade
 ```
 MYSQL:
 ```
-sudo apt install mysql
+sudo apt install mysql-server
 ```
 PHPMYADMIN (simple d'utilisation) : 
 ```
